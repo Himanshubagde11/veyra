@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+@theme {
+  /* VEYRA Color Tokens */
+  --color-veyra-aubergine: #241326;
+  --color-veyra-coral: #E76F51;
+  --color-veyra-chartreuse: #C7F36B;
+  --color-veyra-porcelain: #F7F3ED;
+  --color-veyra-champagne: #F4EBDD;
+  --color-veyra-obsidian: #120B15;
+  --color-veyra-aubergine-light: #3a2340;
+  --color-veyra-coral-light: #ee8e76;
+  --color-veyra-coral-dark: #c95a3e;
+  --color-veyra-chartreuse-light: #d6f794;
+  --color-veyra-chartreuse-dark: #a8d44d;
+  --color-veyra-porcelain-warm: #faf7f2;
+  --color-veyra-champagne-deep: #ede1cf;
+
+  /* Font families */
+  --font-serif: var(--font-dm-serif), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+/* ===== BASE STYLES ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-veyra-porcelain);
+  color: var(--color-veyra-aubergine);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-veyra-chartreuse);
+  color: var(--color-veyra-obsidian);
+}
+
+/* ===== TYPOGRAPHY SYSTEM ===== */
+.text-display-xl {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.text-display-lg {
+  font-family: var(--font-serif);
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+
+.text-display {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.text-heading-lg {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.text-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-heading-sm {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+
+.text-overline {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.text-price {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.text-price-lg {
+  font-family: var(--font-sans);
+  font-size: 1.75rem;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+/* ===== PREMIUM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-veyra-porcelain);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-veyra-champagne-deep);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-veyra-aubergine);
+}
+
+/* ===== FOCUS STYLES (A11Y) ===== */
+:focus-visible {
+  outline: 2px solid var(--color-veyra-coral);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.veyra-container {
+  width: 100%;
+  max-width: 88rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .veyra-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .veyra-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.veyra-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .veyra-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .veyra-section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* Thin border utility */
+.veyra-border {
+  border-color: rgba(36, 19, 38, 0.08);
+}
+
+.veyra-border-strong {
+  border-color: rgba(36, 19, 38, 0.15);
+}
+
+/* Gradient overlays */
+.veyra-gradient-dark {
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 11, 21, 0) 0%,
+    rgba(18, 11, 21, 0.4) 50%,
+    rgba(18, 11, 21, 0.85) 100%
+  );
+}
+
+.veyra-gradient-light {
+  background: linear-gradient(
+    to bottom,
+    rgba(247, 243, 237, 0) 0%,
+    rgba(247, 243, 237, 0.8) 60%,
+    rgba(247, 243, 237, 1) 100%
+  );
+}
+
+/* Skeleton loading */
+.veyra-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-veyra-champagne) 25%,
+    var(--color-veyra-porcelain) 50%,
+    var(--color-veyra-champagne) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+/* Image hover zoom */
+.veyra-image-zoom {
+  overflow: hidden;
+}
+
+.veyra-image-zoom img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.veyra-image-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Editorial number styling */
+.veyra-number {
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 10vw, 10rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  opacity: 0.06;
+  font-weight: 400;
+  user-select: none;
+}

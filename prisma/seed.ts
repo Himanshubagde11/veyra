@@ -7,9 +7,9 @@ async function main() {
 
   // Create Categories
   const categoriesData = [
-    { name: "Apparel", slug: "apparel", description: "Thoughtfully designed clothing for every season.", image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=500&h=700&fit=crop" },
-    { name: "Living", slug: "living", description: "Furniture, lighting and décor for intentional spaces.", image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=500&h=700&fit=crop" },
-    { name: "Objects", slug: "objects", description: "Everyday tools, stationery and sculptural pieces.", image: "https://images.unsplash.com/photo-1491933382434-500287f9b54b?w=500&h=700&fit=crop" },
+    { name: "Apparel", slug: "apparel", description: "Thoughtfully designed clothing for every season.", image: "/_assets/category_apparel.jpg" },
+    { name: "Living", slug: "living", description: "Furniture, lighting and décor for intentional spaces.", image: "/_assets/category_living.jpg" },
+    { name: "Objects", slug: "objects", description: "Everyday tools, stationery and sculptural pieces.", image: "/_assets/category_objects.jpg" },
     { name: "Accessories", slug: "accessories", description: "Bags, watches, jewellery and small leather goods.", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=700&fit=crop" },
   ];
 

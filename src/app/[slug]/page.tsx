@@ -186,8 +186,9 @@ const STATIC_PAGES: Record<string, { title: string; content: React.ReactNode }> 
   }
 };
 
-export default function StaticPage({ params }: { params: { slug: string } }) {
-  const page = STATIC_PAGES[params.slug];
+export default async function StaticPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const page = STATIC_PAGES[slug];
 
   if (!page) {
     notFound();
